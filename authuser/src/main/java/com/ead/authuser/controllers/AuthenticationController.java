@@ -28,10 +28,10 @@ public class AuthenticationController {
     public ResponseEntity<Object> registerUser(@RequestBody @Validated(UserDTO.UserView.RegistrationPost.class)
                                                @JsonView(UserDTO.UserView.RegistrationPost.class) UserDTO userDTO) {
         if (userService.existsByUsername(userDTO.getUsername())) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Error Username is Already Taken!");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Error: Username is Already Taken!");
         }
         if (userService.existsByEmail(userDTO.getEmail())) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Error Email is Already Taken!");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Error: Email is Already Taken!");
         }
         var userModel = new UserModel();
         BeanUtils.copyProperties(userDTO, userModel);
