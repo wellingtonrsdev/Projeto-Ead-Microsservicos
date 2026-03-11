@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AuthuserApplication {
 
 	public static void main(String[] args) {
+		System.out.println(">>> CONFIG LOADED <<<");
 		SpringApplication.run(AuthuserApplication.class, args);
 	}
 

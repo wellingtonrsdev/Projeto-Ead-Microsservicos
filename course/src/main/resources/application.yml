@@ -7,12 +7,14 @@ spring:
     username: postgres
     password: 1234567
 
+
   jpa:
     hibernate:
       ddl-auto: update
-      dialect: org.hibernate.dialect.PostgreSQLDialect
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
       jdbc:
         lob.non-contextual-creation: true
     properties:
       hibernate:
         show_sql: true
+
